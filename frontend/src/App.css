@@ -1,0 +1,484 @@
+/*  ===== MOBILE styles (reside at the top and are inherited by all devices) ===== */
+/*  ===== See tablet, desktop, and print @media queries at the bottom. */
+
+
+/*   ----- Imports  -----  */
+  /* Add fonts from the app's server  */
+    /* @font-face {                
+      font-family: 'FontName';
+      src: url('FontName.woff2') format('woff2');
+    }  */
+    /* ...or hosted services like Google Fonts  */
+    @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@300&family=Yeseva+One&display=swap');
+  
+  /* @import 'node_modules/modern-normalize/modern-normalize.css'; */
+        /* npm install modern-normalize
+          Resets elements for browser consistency.  
+          https://www.npmjs.com/package/modern-normalize
+        */         
+  
+  /* Component-specific stylesheets, if any. 
+    @import "component1.css";   
+  */
+
+  @import "~react-image-gallery/styles/css/image-gallery.css";
+
+/*   ----- Variables  -----  */
+:root {
+    --custom-background-color: rgb(179, 212, 252, 0.5);
+    --custom-opacity-bg-color: rgb(244,249,254,0.7);
+    --custom-default-text-color: #252525;
+    --custom-gray-text-color: #7d7a7a;
+    --custom-text-color: #F4F9FE;
+    --custom-accent-color: #0B42CD;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+/*  ----- Viewport ----- elements inherited by all remaining elements ----- */
+body {       /* Can alternatively define in html {} or :root {} */
+    max-width: 100%;
+    color: var(--custom-default-text-color);
+    text-decoration: none;
+    font-family: 'Lexend Deca', sans-serif;
+    background-attachment: fixed;
+    background-color: var(--custom-opacity-bg-color);
+    background-image: url("./images/sakura-background.jpg");
+    background-position: top right;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    z-index: 1; 
+}
+
+/*  ----- Page layout blocks -----  */
+header {
+}
+
+header.page-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+header h1 {
+    font-family: 'Lexend Deca', sans-serif;
+    margin: 45px 50px;
+    text-align: center;
+    line-height: 35px;
+    letter-spacing: 5px;
+}
+
+header h1 .lastname::before {
+	content: "\A" ;
+	white-space: pre ;
+}
+
+h2.subpage {
+  margin-top: 65px;
+}
+
+main {
+    width: 50%;
+    height: auto;
+    margin: 0 auto;
+}
+main h3, h4, h5 {
+    color: var(--custom-accent-color);
+}
+
+section {}
+
+  article {
+  }
+    #topic1 {}
+    #topic2 {}
+div {}
+aside {}
+footer {
+    text-align: center;
+}
+
+footer p {
+    width: 200px;
+    padding: 20px;
+    margin: 30px auto 10px;
+    border-top: 1px var(--custom-background-color) solid;
+}
+
+/* ----- Anchors ----- Text links */
+a {
+    color: var(--custom-default-text-color);
+    font-family: 'Lexend Deca', sans-serif;
+    text-decoration: none;
+}
+a:link {}
+a:hover {}
+a:active {}
+a:visited {}
+
+/*  ----- Navigation ----- Override text links for navigation only.  */
+nav {}
+nav a {
+    transition: all .5s;
+}
+nav a:hover {}
+
+nav#global-navigation {
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 20px;
+}
+
+nav#global-navigation a{
+    font-size: 2em;
+    font-weight: bold;
+    display: flex;
+    justify-content: flex-end;
+}
+
+nav#global-navigation a:hover {
+    color: var(--custom-accent-color);
+}
+
+nav#content-navigation {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    margin: 20px;
+    padding: 20px;
+    background: var(--custom-background-color);
+}
+
+nav#content-navigation a {
+    display: flex;
+    justify-content: flex-start;
+}
+
+nav#content-navigation a:hover {
+    border-bottom: 2px solid var(--custom-accent-color);
+}
+
+nav#top-navigation {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 20px;
+}
+
+nav#top-navigation a {
+    display: inline-block;
+    padding: 10px 12px 5px 12px;
+    background: var(--custom-accent-color);
+    color: var(--custom-text-color);
+}
+
+nav#top-navigation a:hover {
+    -webkit-animation: zoom .5s;
+    animation: zoom .5s;
+}
+@-webkit-keyframes zoom {
+50% {
+    -webkit-transform: scale(1.2);
+}
+}
+@keyframes zoom {
+50% {
+    transform: scale(1.2);
+}
+}
+
+/*  -----  Typography  ----- */
+p {}
+br {}
+ol, ul, dl {}
+li {}
+dt {
+    font-family: 'Yeseva One', cursive;
+}
+dd {}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Yeseva One', cursive;
+    text-align: center;
+} 
+h1 {}
+h2 {}
+.bg-image {
+    width: 100%;
+    height: 100vh;
+}
+.bg-image .page-title {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;   
+}
+.bg-image h2 {
+    padding: 5% 8%;
+    border-radius: 15px;
+    background-color: var(--custom-opacity-bg-color);
+}
+h3 {}
+h4 {}
+h5 {}
+h6 {}
+
+abbr {}
+acronym {}
+address {}
+blockquote {}
+  q {}
+  cite {}
+em {}
+hr {}
+mark {}
+s {}
+span {}
+.bg-image .bg {
+    display: block;
+    width: 80%;
+    height: calc(100% - 180px);
+    border-radius: 10px 20px 30px 40px;
+    position: absolute;
+    top: 90px;
+    right: 260px;
+    background: url("./images/beach-in-cebu-island.jpg") no-repeat center center/cover;
+    z-index: -2;
+}
+strong {}
+sub {}
+sup {}
+time {}
+
+/*  ----- Coding or instructional typography ----- */
+pre {}
+code {}
+kbd {}
+samp {}
+var {}
+del {} 
+ins {}
+
+/*  ----- Table ----- */
+table {
+    width: 100%;
+    padding: 15px 10px 10px;
+    border: none;
+    border-radius: 10px;
+    border-collapse: collapse;
+    background: var(--custom-opacity-bg-color);
+}
+caption {
+    font-family: 'Yeseva One', cursive;
+    font-size: 1.1em;
+    padding-bottom: 5px;
+}
+thead {}
+tbody {
+  text-align: center;
+}
+tfoot {}
+tr {}
+  tbody tr:nth-child(odd) {
+    background: var(--custom-background-color);
+  }
+th {
+    font-family: 'Yeseva One', cursive;
+    font-weight: 100;
+    padding: 5px;
+}
+td {
+    padding: 5px;
+}
+  td:last-child, #personTable td:nth-child(2) a{
+    color: var(--custom-accent-color);
+  }
+colgroup {}
+data {}
+datalist {}
+
+
+/*  ----- Form ----- */
+form {}
+fieldset {
+    margin: 20px 0;
+    padding: 20px;
+    border: 0px;
+    background: var(--custom-background-color);
+}
+fieldset p {
+    padding: 10px;
+    border-radius: 10px;
+    background: var(--custom-opacity-bg-color);
+}
+:focus {
+    border: 1px var(--custom-accent-color) solid;
+    background: var(--custom-background-color);
+}
+  legend {
+    font-size: 1.17em;
+    font-family: 'Yeseva One', cursive;
+    background: var(--custom-opacity-bg-color);
+    padding: 5px;
+    border-radius: 10px;
+  }
+label {
+    display: flex;
+    flex-direction: column;
+}
+label.radio, label.checkbox {
+    flex-direction: initial;
+    padding: 5px 0px;
+}
+*:required:invalid {
+    border: 1px red solid;
+}
+*:required:valid {
+    border: 1px green solid;
+}
+label.required span::after, th.required::after {
+    content: " *";
+    color: red;
+}
+  button {
+    font-size: 1em;
+    margin: 10px 0 0 0;
+    padding: 10px;
+    border: 0px;
+    border-radius: 10px;
+  }
+  button#server, button#browser {
+    margin: 10px 0 20px 0;
+  }
+  input {
+    font-size: 1em;
+    margin: 10px 0 0 0;
+    padding: 10px;
+    border: 0px;
+  }
+  label.radio input, label.checkbox input {
+    margin: 0 5px 0 5px;
+    padding: 10px;
+    width: 20px;
+  }
+  *::placeholder {
+    color: var(--custom-gray-text-color);
+  }
+  output {}
+  meter {}
+  progress {}
+  select {
+    font-size: 1em;
+    margin: 10px 0 0 0;
+    padding: 10px;
+    border: 0px;
+  }
+    optgroup {}
+    option {}
+  textarea {
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 1em;
+    margin: 10px 0 0 0;
+    padding: 10px;
+    border: 0px;
+    width: 100%;
+    min-height: 150px;
+  }
+  textarea#delivery {
+    width: 100%;
+    min-height: 0px;
+  }
+span.message::before {
+	content: "\A\A" ;
+	white-space: pre ;
+}
+/* ----- Media ----- */
+figure {}
+figcaption {}
+figure img {}
+svg {}
+picture {}
+  source {}
+iframe {}
+video {}
+audio {}
+embed {}
+object {}
+
+/*  ----- Classes for alignment, positioning, widths, grids, embellishments, and animation -----  */
+
+.floatright {}
+.floatleft {}
+.center-middle {}
+
+.ten {}
+.twenty {}
+.thirty {}
+.forty {}
+.fifty {}
+.sixty {}
+.seventy {}
+.eighty {}
+
+.radius {}
+.circle {}
+.boxshadow {}
+.tshadow {} 
+.gradient {}
+.shape {}
+
+@keyframes App-logo {}
+
+/*   ===== TABLET  media query overrides mobile styles ===== */
+@media all and (min-width: 600px) {}
+
+/*   ===== DESKTOP  media query overrides mobile and tablet styles ===== */
+@media all and (min-width: 1080px) {}
+
+/*   ===== PRINT  media query overrides previous styles =====  */
+@media print {}
+
+/* default styles */
+/* .App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
