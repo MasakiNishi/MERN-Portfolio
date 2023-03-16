@@ -1,6 +1,8 @@
 {
-  "name": "a7-nishim-react",
-  "version": "0.1.0",
+  "name": "mern-portfolio-frontend",
+  "version": "1.0.0",
+  "description": "react frontend",
+  "author": "Masaki Nishi",
   "private": true,
   "proxy": "http://localhost:3000",
   "dependencies": {
