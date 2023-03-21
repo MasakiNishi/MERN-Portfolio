@@ -164,6 +164,7 @@ nav#content-navigation {
 }
 
 nav#content-navigation a {
+    color: var(--custom-default-text-color);
     display: flex;
     justify-content: flex-start;
 }
