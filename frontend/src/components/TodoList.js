@@ -14,10 +14,10 @@ function TodoList({ todoList, onAdd, onDelete, onEdit }) {
             </thead>
             <thead>
                 <tr>
-                    <th>Edit</th>
                     <th>Priority</th>
                     <th>Task</th>
                     <th>Due</th>
+                    <th>Edit</th>
                     <th>Delete</th>
                 </tr>
             </thead>
