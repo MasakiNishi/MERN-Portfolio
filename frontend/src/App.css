@@ -370,6 +370,9 @@ label.required span::after, th.required::after {
     padding: 10px;
     border: 0px;
   }
+  input[type=date] {
+    font-family: 'Lexend Deca', sans-serif;
+  }
   label.radio input, label.checkbox input {
     margin: 0 5px 0 5px;
     padding: 10px;
