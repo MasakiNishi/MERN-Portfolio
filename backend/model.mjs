@@ -29,11 +29,11 @@ const Todo = mongoose.model('Todo', todoListSchema);
 
 
 // CREATE model *****************************************
-const createTodo = async (priority, task, date) => {
+const createTodo = async (priority, task, due) => {
     const todo = new Todo({ 
         priority: priority, 
         task: task, 
-        date: date
+        due: due
     });
     return todo.save();
 }
@@ -54,17 +54,17 @@ const retrieveTodoByID = async (_id) => {
 
 
 // UPDATE model *****************************************************
-const updateTodo = async (_id, priority, task, date) => {
+const updateTodo = async (_id, priority, task, due) => {
     const result = await Todo.replaceOne({_id: _id }, {
         priority: priority, 
         task: task, 
-        date: date
+        due: due
     });
     return { 
         _id: _id, 
         priority: priority, 
         task: task, 
-        date: date
+        due: due
     }
 }
 

@@ -8,9 +8,11 @@ function TodoList({ todoList, onAdd, onDelete, onEdit }) {
         <table id="todoList">
             <caption>Add and Edit ToDo-List</caption>
             <thead>
-                <span class="add" onClick={() => onAdd(todoList)} >
-                    <MdLibraryAdd/> Add
-                </span>
+                <tr>
+                    <th className="add-icon"><MdLibraryAdd　onClick={() => onAdd(todoList)}/>Add new task</th>
+                </tr>
+            </thead>
+            <thead>
                 <tr>
                     <th>Edit</th>
                     <th>Priority</th>

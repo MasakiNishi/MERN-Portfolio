@@ -12,7 +12,7 @@ app.post ('/tasks', (req,res) => {
     todoList.createTodo(
         req.body.priority, 
         req.body.task, 
-        req.body.date
+        req.body.due
         )
         .then(todo => {
             res.status(201).json(todo);
@@ -65,7 +65,7 @@ app.put('/tasks/:_id', (req, res) => {
         req.params._id, 
         req.body.priority, 
         req.body.task, 
-        req.body.date
+        req.body.due
     )
     .then(todo => {
         res.json(todo);

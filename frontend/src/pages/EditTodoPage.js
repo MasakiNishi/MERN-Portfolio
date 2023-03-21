@@ -1,30 +1,32 @@
 import React, { useState } from 'react';
 import { useNavigate } from "react-router-dom";
 
-export const AddTodoPage = () => {
+export const EditTodoPage = ({ todoToEdit }) => {
 
-    const [priority, setPriority] = useState('');
-    const [task, setTask]         = useState('');
-    const [due, setDue]           = useState('');
+    const [priority, setPriority] = useState(todoToEdit.priority);
+    const [task, setTask]         = useState(todoToEdit.task);
+    const [due, setDue]           = useState(todoToEdit.due);
     
     const redirect = useNavigate();
 
-    const addTodo = async () => {
-        const newTodo = { priority, task, due };
-
-        const response = await fetch('/tasks', {
-            method: 'post',
-            body: JSON.stringify(newTodo),
+    const editTodo = async () => {
+        const response = await fetch(`/tasks/${todoToEdit._id}`, {
+            method: 'put',
+            body: JSON.stringify({
+                priority: priority, 
+                task: task, 
+                due: due
+            }),
             headers: {
                 'Content-Type': 'application/json',
             },
         });
 
-        if(response.status === 201){
-            alert(`todo added`);
+        if(response.status === 200){
+            alert(`todo updated`);
             redirect("/tasks");
         } else {
-            alert(`todo not added status code = ${response.status}`);
+            alert(`todo not updated status code = ${response.status}`);
             redirect("/tasks");
         }
     };
@@ -33,8 +35,8 @@ export const AddTodoPage = () => {
     return (
         <>
         <article>
-            <h2>Add ToDo</h2>
-            <p>You can add your ToDo and set due dates and priority.</p>
+            <h2>Update ToDo</h2>
+            <p>You can edit the priority, task and due dates.</p>
             <form onSubmit={(e) => { e.preventDefault();}}>
                 <fieldset>
                     <legend>What is your current task?</legend>
@@ -58,16 +60,16 @@ export const AddTodoPage = () => {
                     <input
                         type="date"
                         placeholder="Due dates of the task"
-                        value={due}
+                        value={due.slice(0,10)}
                         onChange={e => setDue(e.target.value)} 
                         id="due" />
 
                     <label for="submit">
                     <button
                         type="submit"
-                        onClick={addTodo}
+                        onClick={editTodo}
                         id="submit"
-                    >Add</button> to the ToDo-List</label>
+                    >Save</button> updates to the ToDo-List</label>
                 </fieldset>
                 </form>
             </article>
@@ -75,4 +77,4 @@ export const AddTodoPage = () => {
     );
 }
 
-export default AddTodoPage;
+export default EditTodoPage;
