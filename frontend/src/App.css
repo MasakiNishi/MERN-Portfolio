@@ -361,7 +361,7 @@ label.required span::after, th.required::after {
   }
   input {
     font-size: 1em;
-    margin: 10px 0 0 0;
+    margin: 5px 0 10px 0;
     padding: 10px;
     border: 0px;
   }
