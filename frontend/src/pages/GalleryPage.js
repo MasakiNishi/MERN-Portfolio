@@ -69,6 +69,7 @@ function GalleryPage() {
     return (
       <>
         <h2 className="subpage">Gallery</h2>
+        <p>This page implements a slideshow with react-image-gallery.</p>
         <article>
             <h3>My portfollio design</h3>
             <ImageGallery items={portfolioImages} />

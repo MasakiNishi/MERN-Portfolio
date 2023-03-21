@@ -4,6 +4,7 @@ function TopicsPage() {
     return (
         <>
             <h2 className="subpage">Web Development Concepts</h2>
+            <p>Web Development is the process of designing, building, deploying, and maintaining websites. Web development is the art of designing and coding websites.</p>
             <nav id="content-navigation">
                 <a href="#server">{'>'} About Web Servers</a>
                 <a href="#design">{'>'} Frontend Design</a>
