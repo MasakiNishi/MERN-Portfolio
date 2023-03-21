@@ -20,7 +20,7 @@ db.once("open", (err) => {
 // Define the collection's schema.
 const todoListSchema = mongoose.Schema({
     priority: { type: Number, required: true, min: 0},
-	item:     { type: String, required: true },
+	task:     { type: String, required: true },
 	date:     { type: Date, required: true, default: Date.now}
 });
 
@@ -29,10 +29,10 @@ const Todo = mongoose.model('Todo', todoListSchema);
 
 
 // CREATE model *****************************************
-const createTodo = async (priority, item, date) => {
+const createTodo = async (priority, task, date) => {
     const todo = new Todo({ 
         priority: priority, 
-        item: item, 
+        task: task, 
         date: date
     });
     return todo.save();
@@ -54,16 +54,16 @@ const retrieveTodoByID = async (_id) => {
 
 
 // UPDATE model *****************************************************
-const updateTodo = async (_id, priority, item, date) => {
+const updateTodo = async (_id, priority, task, date) => {
     const result = await Todo.replaceOne({_id: _id }, {
         priority: priority, 
-        item: item, 
+        task: task, 
         date: date
     });
     return { 
         _id: _id, 
         priority: priority, 
-        item: item, 
+        task: task, 
         date: date
     }
 }
