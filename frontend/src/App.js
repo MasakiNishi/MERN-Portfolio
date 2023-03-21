@@ -1,4 +1,4 @@
-import React from 'react';
+import { React, useState } from 'react';
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 
 import './App.css';
@@ -8,10 +8,14 @@ import HomePage from './pages/HomePage.js';
 import GalleryPage from './pages/GalleryPage.js';
 import StaffPage from './pages/StaffPage.js';
 import OrderPage from './pages/OrderPage.js';
+import TodoListPage from './pages/TodoListPage.js';
 
 import products from './data/products.js';
 
 function App() {
+
+  const [todo, setTodoToEdit] = useState([])
+
   return (
     <>
       <BrowserRouter>
@@ -31,6 +35,7 @@ function App() {
               <Route path="/gallery" element={<GalleryPage />} />
               <Route path="/staff" element={<StaffPage />} />
               <Route path="/order" element={<OrderPage products={products} />} />
+              <Route path="/tasks" element={<TodoListPage setTodo={setTodoToEdit}/>} />
             </Routes>
           </section>
   
