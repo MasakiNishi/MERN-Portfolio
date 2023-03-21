@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import Nav from './components/Nav.js';
 import HomePage from './pages/HomePage.js';
+import TopicsPage from './pages/TopicsPage.js';
 // import ContactPage from './pages/ContactPage.js';
 import GalleryPage from './pages/GalleryPage.js';
 import StaffPage from './pages/StaffPage.js';
@@ -33,6 +34,7 @@ function App() {
           <section>
             <Routes>
               <Route path="/" element={<HomePage />} />
+              <Route path="/topics" element={<TopicsPage />} />
               {/* <route path="/contact" element={<ContactPage />} /> */}
               <Route path="/gallery" element={<GalleryPage />} />
               <Route path="/staff" element={<StaffPage />} />

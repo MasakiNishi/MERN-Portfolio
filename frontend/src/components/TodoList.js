@@ -9,7 +9,7 @@ function TodoList({ todoList, onAdd, onDelete, onEdit }) {
             <caption>Add and Edit ToDo-List</caption>
             <thead>
                 <tr>
-                    <th className="add-icon"><MdLibraryAdd　onClick={() => onAdd(todoList)}/>Add new task</th>
+                    <th className="add-icon" onClick={() => onAdd(todoList)}><MdLibraryAdd />Add new task</th>
                 </tr>
             </thead>
             <thead>

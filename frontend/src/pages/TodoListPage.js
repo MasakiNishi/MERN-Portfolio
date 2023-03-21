@@ -51,7 +51,7 @@ function TodoListPage({ setTodo }) {
     // DISPLAY the todo lists
     return (
         <>
-            <h2>ToDo Lists</h2>
+            <h2 className="subpage">ToDo Lists</h2>
             <article>
                 <p>You can manage your ToDo with due dates and priority.</p>
                 <TodoList

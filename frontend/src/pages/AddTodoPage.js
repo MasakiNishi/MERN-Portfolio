@@ -33,7 +33,7 @@ export const AddTodoPage = () => {
     return (
         <>
         <article>
-            <h2>Add ToDo</h2>
+            <h2 className="subpage">Add ToDo</h2>
             <p>You can add your ToDo and set due dates and priority.</p>
             <form onSubmit={(e) => { e.preventDefault();}}>
                 <fieldset>

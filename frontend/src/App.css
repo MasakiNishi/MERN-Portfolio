@@ -62,14 +62,16 @@ header.page-header {
     position: fixed;
     top: 0;
     left: 0;
+    z-index: 1;
 }
 
 header h1 {
+    font-size: 1.5em;
     font-family: 'Lexend Deca', sans-serif;
-    margin: 45px 50px;
+    margin: 10px;
     text-align: center;
-    line-height: 35px;
-    letter-spacing: 5px;
+    line-height: 25px;
+    letter-spacing: 2px;
 }
 
 header h1 .lastname::before {
@@ -82,7 +84,7 @@ h2.subpage {
 }
 
 main {
-    width: 50%;
+    width: 70%;
     height: auto;
     margin: 0 auto;
 }
@@ -93,6 +95,7 @@ main h3, h4, h5 {
 section {}
 
   article {
+    overflow: auto;
   }
     #topic1 {}
     #topic2 {}
@@ -131,11 +134,12 @@ nav#global-navigation {
     position: fixed;
     top: 0;
     right: 0;
-    margin: 20px;
+    margin: 10px;
+    z-index: 1;
 }
 
 nav#global-navigation a{
-    font-size: 2em;
+    font-size: 1.5em;
     font-weight: bold;
     display: flex;
     justify-content: flex-end;
@@ -241,12 +245,12 @@ s {}
 span {}
 .bg-image .bg {
     display: block;
-    width: 80%;
+    width: 100%;
     height: calc(100% - 180px);
     border-radius: 10px 20px 30px 40px;
     position: absolute;
     top: 90px;
-    right: 260px;
+    right: 0;
     background: url("./images/beach-in-cebu-island.jpg") no-repeat center center/cover;
     z-index: -2;
 }
@@ -401,7 +405,12 @@ span.message::before {
 figure {}
 figcaption {}
 figure img {}
-svg {}
+svg {
+  font-size: 1.5em;
+}
+.add-icon:hover {
+  cursor: pointer;
+}
 picture {}
   source {}
 iframe {}
@@ -435,7 +444,30 @@ object {}
 @keyframes App-logo {}
 
 /*   ===== TABLET  media query overrides mobile styles ===== */
-@media all and (min-width: 600px) {}
+@media all and (min-width: 600px) {
+  main {
+    width: 50%;
+  }
+  header h1 {
+    font-size: 2em;
+    margin: 45px 50px;
+    line-height: 35px;
+    letter-spacing: 5px;
+  }
+
+  nav#global-navigation {
+    margin: 10px;
+  }
+
+  nav#global-navigation a{
+    font-size: 2em;
+  }
+
+  .bg-image .bg {
+    width: 80%;
+    right: 260px;
+  }
+}
 
 /*   ===== DESKTOP  media query overrides mobile and tablet styles ===== */
 @media all and (min-width: 1080px) {}

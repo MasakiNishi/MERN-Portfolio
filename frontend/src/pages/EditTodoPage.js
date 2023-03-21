@@ -35,7 +35,7 @@ export const EditTodoPage = ({ todoToEdit }) => {
     return (
         <>
         <article>
-            <h2>Update ToDo</h2>
+            <h2 className="subpage">Update ToDo</h2>
             <p>You can edit the priority, task and due dates.</p>
             <form onSubmit={(e) => { e.preventDefault();}}>
                 <fieldset>
