@@ -40,7 +40,7 @@ export const EditTodoPage = ({ todoToEdit }) => {
             <form onSubmit={(e) => { e.preventDefault();}}>
                 <fieldset>
                     <legend>What is your current task?</legend>
-                    <label for="priority">Priority</label>
+                    <label for="priority">Priority (1 to 10)</label>
                     <input
                         type="number"
                         placeholder="1"

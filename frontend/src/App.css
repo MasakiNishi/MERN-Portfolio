@@ -88,8 +88,11 @@ main {
     height: auto;
     margin: 0 auto;
 }
-main h3, h4, h5 {
+main h3{
     color: var(--custom-accent-color);
+}
+main h4, h5 {
+  color: var(--custom-default-text-color);
 }
 
 section {}
@@ -118,7 +121,9 @@ a {
     font-family: 'Lexend Deca', sans-serif;
     text-decoration: none;
 }
-a:link {}
+a:link {
+  color: var(--custom-accent-color);
+}
 a:hover {}
 a:active {}
 a:visited {}
@@ -299,7 +304,7 @@ th {
 td {
     padding: 5px;
 }
-  td:last-child, #personTable td:nth-child(2) a{
+  #personTable td:nth-child(2) a{
     color: var(--custom-accent-color);
   }
 colgroup {}
@@ -407,6 +412,7 @@ figcaption {}
 figure img {}
 svg {
   font-size: 1.5em;
+  color: var(--custom-accent-color);
 }
 .add-icon:hover {
   cursor: pointer;

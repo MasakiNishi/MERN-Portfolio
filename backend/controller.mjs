@@ -8,7 +8,7 @@ app.use(express.json());
 
 
 // CREATE controller ******************************************
-app.post ('/tasks', (req,res) => { 
+app.post ('/tasks', (req,res) => {
     todoList.createTodo(
         req.body.priority, 
         req.body.task, 
@@ -68,7 +68,9 @@ app.put('/tasks/:_id', (req, res) => {
         req.body.due
     )
     .then(todo => {
-        res.json(todo);
+        if (todo !== null) {
+            res.json(todo);
+        }
     })
     .catch(error => {
         console.log(error);

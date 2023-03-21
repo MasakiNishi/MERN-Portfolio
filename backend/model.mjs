@@ -11,7 +11,7 @@ const db = mongoose.connection;
 // Confirm the database connection.
 db.once("open", (err) => {
     if(err){
-        res.status(500).json({ error: '500:Connection to the server failed.' });
+        res.status(500).json({ error: '500:Connection to the server failed.'});
     } else  {
         console.log('Successfully connected to MongoDB todoList collection.');
     }
@@ -19,8 +19,8 @@ db.once("open", (err) => {
 
 // Define the collection's schema.
 const todoListSchema = mongoose.Schema({
-    priority: { type: Number, required: true, min: 0},
-	task:     { type: String, required: true },
+    priority: { type: Number, required: true, min: 1, max: 10},
+	task:     { type: String, required: true},
 	due:     { type: Date, required: true, default: Date.now}
 });
 
@@ -55,11 +55,12 @@ const retrieveTodoByID = async (_id) => {
 
 // UPDATE model *****************************************************
 const updateTodo = async (_id, priority, task, due) => {
-    const result = await Todo.replaceOne({_id: _id }, {
+    const result = await Todo.replaceOne({_id: _id }, { 
         priority: priority, 
         task: task, 
         due: due
-    });
+    }, {runValidators: true});
+
     return { 
         _id: _id, 
         priority: priority, 
