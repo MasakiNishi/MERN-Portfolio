@@ -9,6 +9,7 @@ import GalleryPage from './pages/GalleryPage.js';
 import StaffPage from './pages/StaffPage.js';
 import OrderPage from './pages/OrderPage.js';
 import TodoListPage from './pages/TodoListPage.js';
+import AddTodoPage from './pages/AddTodoPage.js';
 
 import products from './data/products.js';
 
@@ -36,6 +37,7 @@ function App() {
               <Route path="/staff" element={<StaffPage />} />
               <Route path="/order" element={<OrderPage products={products} />} />
               <Route path="/tasks" element={<TodoListPage setTodo={setTodoToEdit}/>} />
+              <Route path="/tasks/add" element={<AddTodoPage setTodo={setTodoToEdit}/>} />
             </Routes>
           </section>
   

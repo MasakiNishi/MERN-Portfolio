@@ -21,7 +21,7 @@ db.once("open", (err) => {
 const todoListSchema = mongoose.Schema({
     priority: { type: Number, required: true, min: 0},
 	task:     { type: String, required: true },
-	date:     { type: Date, required: true, default: Date.now}
+	due:     { type: Date, required: true, default: Date.now}
 });
 
 // Compile the model from the schema.

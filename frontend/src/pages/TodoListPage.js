@@ -15,13 +15,19 @@ function TodoListPage({ setTodo }) {
         const response = await fetch('/tasks');
         const todoList = await response.json();
         setTodoList(todoList);
-    } 
-    
+    }
+
+    // UPDATE a single todo
+    const onAddTodo = async todo => {
+        setTodo(todo);
+        redirect("/tasks/add");
+    }
+
 
     // UPDATE a single todo
     const onEditTodo = async todo => {
         setTodo(todo);
-        redirect("/edit");
+        redirect("/tasks/edit");
     }
 
 
@@ -45,11 +51,12 @@ function TodoListPage({ setTodo }) {
     // DISPLAY the todo lists
     return (
         <>
-            <h2>Todo Lists</h2>
+            <h2>ToDo Lists</h2>
             <article>
-                <p>You can add your todo and set due dates and priority.</p>
+                <p>You can manage your ToDo with due dates and priority.</p>
                 <TodoList
-                    todoList={todoList} 
+                    todoList={todoList}
+                    onAdd={onAddTodo} 
                     onEdit={onEditTodo} 
                     onDelete={onDeleteTodo} 
                 />

@@ -3,12 +3,14 @@ import Todo from './Todo';
 
 import { MdLibraryAdd } from 'react-icons/md';
 
-function TodoList({ todoList, onDelete, onEdit }) {
+function TodoList({ todoList, onAdd, onDelete, onEdit }) {
     return (
         <table id="todoList">
-            <caption>Add and Edit Todo-List</caption>
-            <p><MdLibraryAdd onClick={() => onEdit(todoList)} /> Add </p>
+            <caption>Add and Edit ToDo-List</caption>
             <thead>
+                <span class="add" onClick={() => onAdd(todoList)} >
+                    <MdLibraryAdd/> Add
+                </span>
                 <tr>
                     <th>Edit</th>
                     <th>Priority</th>
